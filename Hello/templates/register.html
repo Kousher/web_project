@@ -1,0 +1,53 @@
+<style>
+  .head_custom {
+    color: red;
+    background-color: black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+  }
+</style>
+
+{% for message in messages %}
+
+<a class="head_custom">{{message}}</a>
+{% endfor %}
+
+<form method="POST" action="register">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <label for="exampleInputUsername">Username</label>
+    <input
+      type="text"
+      name="username"
+      class="form-control is-invalid"
+      id="validationServerUsername"
+      placeholder="Username"
+      aria-describedby="inputGroupPrepend3"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input
+      type="email"
+      name="email1"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input
+      type="password"
+      name="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
